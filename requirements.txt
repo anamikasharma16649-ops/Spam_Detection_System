@@ -1,0 +1,7 @@
+fastapi
+pydantic
+pandas
+numpy
+uvicorn 
+pickle-mixin
+scikit-learn
