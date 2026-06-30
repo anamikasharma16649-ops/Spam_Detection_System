@@ -1,5 +1,6 @@
 from fastapi import FastAPI
 from pydantic import BaseModel
+from fastapi.responses import FileResponse
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.staticfiles import StaticFiles
 import pickle
@@ -34,11 +35,6 @@ def preprocess(text):
 def home():
     return  FileResponse("frontend/index.html")
 
-# def predict(data: UserReqt):
-#     text = preprocess(data.Email)
-#     prediction = model.predict([text])
-
-#     return {"prediction": int(prediction[0])}
 
 @app.post("/prediction")
 def predict(data: UserReqt):

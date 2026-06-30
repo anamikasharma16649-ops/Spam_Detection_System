@@ -1,42 +1,116 @@
-body {
-    font-family: Arial;
-    background: #f2f2f2;
-    text-align: center;
-    margin-top: 60px;
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Segoe UI',sans-serif;
 }
 
-.container {
-    background: white;
-    width: 50%;
-    margin: auto;
-    padding: 25px;
-    border-radius: 10px;
-    box-shadow: 0px 0px 10px gray;
+body{
+
+    height:100vh;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    background:linear-gradient(135deg,#4F46E5,#06B6D4);
+
 }
 
+.card{
+
+    width:750px;
+
+    background:white;
+
+    padding:40px;
+
+    border-radius:22px;
+
+    box-shadow:0 20px 60px rgba(0,0,0,.25);
+
+    text-align:center;
+
+}
+
+h1{
+
+    color:#222;
+
+    font-size:42px;
+
+}
+
+.subtitle{
+
+    margin-top:10px;
+
+    color:#777;
+
+    font-size:18px;
+
+    margin-bottom:30px;
+
+}
 textarea {
-    width: 90%;
-    height: 150px;
-    padding: 10px;
-    margin-top: 10px;
+    width: 100%;
+    height: 220px;
+    padding: 18px;
+    font-size: 28px;    
+    font-family: "Segoe UI", Arial, sans-serif;
+    line-height: 1.7;
+    color: #1f2937;
+    border: 2px solid #ddd;
+    border-radius: 12px;
+    resize: none;
+    outline: none;
+    box-sizing: border-box;
+    transition: 0.3s;
 }
 
-button {
-    margin-top: 15px;
-    padding: 10px 25px;
-    background: #28a745;
-    color: white;
-    border: none;
-    cursor: pointer;
-    font-size: 16px;
+textarea:focus {
+    border-color: #2563eb;
+    box-shadow: 0 0 12px rgba(37,99,235,0.25);
 }
 
-button:hover {
-    background: #218838;
+button{
+
+    margin-top:30px;
+
+    width:220px;
+
+    height:55px;
+
+    border:none;
+
+    border-radius:12px;
+
+    background:#4F46E5;
+
+    color:white;
+
+    font-size:20px;
+
+    cursor:pointer;
+
+    transition:.3s;
+
 }
 
-#result {
-    margin-top: 20px;
-    font-size: 20px;
-    font-weight: bold;
+button:hover{
+
+    transform:scale(1.05);
+
+    background:#3730A3;
+
+}
+
+#result{
+
+    margin-top:30px;
+
+    font-size:32px;
+
+    font-weight:bold;
+
 }
