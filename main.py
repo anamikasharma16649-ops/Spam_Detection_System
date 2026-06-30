@@ -19,6 +19,7 @@ app.add_middleware(
 
 model = pickle.load(open("model.pkl", "rb"))
 
+
 app.mount("/static", StaticFiles(directory="frontend"), name="static")
 
 class UserReqt(BaseModel):
