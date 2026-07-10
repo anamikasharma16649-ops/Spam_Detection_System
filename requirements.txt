@@ -2,6 +2,9 @@ fastapi
 pydantic
 pandas
 numpy
+matplotlib
+seaborn
 uvicorn 
 pickle-mixin
 scikit-learn
+xgboost

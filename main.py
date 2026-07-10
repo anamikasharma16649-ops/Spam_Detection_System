@@ -4,8 +4,7 @@ from fastapi.responses import FileResponse
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.staticfiles import StaticFiles
 import pickle
-import re
-from sklearn.feature_extraction.text import ENGLISH_STOP_WORDS
+from preprocesing import  preprocess, preprocess_texts
 
 app = FastAPI(title="Email Spam Detection")
 
@@ -17,7 +16,8 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-model = pickle.load(open("model.pkl", "rb"))
+with open("model.pkl", "rb") as f:
+    model = pickle.load(f)
 
 
 app.mount("/static", StaticFiles(directory="frontend"), name="static")
@@ -25,12 +25,6 @@ app.mount("/static", StaticFiles(directory="frontend"), name="static")
 class UserReqt(BaseModel):
     Email: str
 
-def preprocess(text):
-    text = text.lower()
-    text = re.sub("[^a-zA-Z0-9 ]", "", text)
-    text = text.split()
-    text = [word for word in text if word not in ENGLISH_STOP_WORDS]
-    return " ".join(text)
 
 @app.get("/")
 def home():
