@@ -30,15 +30,12 @@ class UserReqt(BaseModel):
 def home():
     return  FileResponse("frontend/index.html")
 
-
 @app.post("/prediction")
 def predict(data: UserReqt):
-    text = preprocess(data.Email)
 
     print("Original:", data.Email)
-    print("Processed:", text)
 
-    prediction = model.predict([text])
+    prediction = model.predict([data.Email])
 
     print("Prediction:", prediction)
 
